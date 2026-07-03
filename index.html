@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:linear-gradient(135deg,#4facfe,#00f2fe);
+}
+
+.container{
+    width:380px;
+    background:#fff;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.25);
+    text-align:center;
+    transition:0.3s;
+}
+
+.container:hover{
+    transform:translateY(-5px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+
+h2{
+    color:#333;
+    margin-bottom:25px;
+    font-size:28px;
+}
+
+label{
+    display:block;
+    text-align:left;
+    margin:12px 0 6px;
+    font-weight:bold;
+    color:#444;
+}
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    border:2px solid #ddd;
+    border-radius:8px;
+    outline:none;
+    font-size:16px;
+    transition:0.3s;
+}
+
+input:focus,
+select:focus{
+    border-color:#4facfe;
+    box-shadow:0 0 8px rgba(79,172,254,0.4);
+}
+
+.select-box{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin-top:10px;
+}
+
+.select-box div{
+    width:50%;
+}
+
+button{
+    width:100%;
+    padding:13px;
+    margin-top:25px;
+    border:none;
+    border-radius:8px;
+    background:linear-gradient(90deg,#4facfe,#00c6fb);
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:linear-gradient(90deg,#00c6fb,#0072ff);
+    transform:scale(1.03);
+}
+
+button:active{
+    transform:scale(0.98);
+}
+
+#result{
+    margin-top:25px;
+    padding:12px;
+    background:#f4f8ff;
+    border-radius:8px;
+    color:#0072ff;
+    font-size:20px;
+    font-weight:bold;
+    min-height:25px;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+    <h2>Currency Converter</h2>
+    <label>Amount</label>
+    <input type="number" id="amount"><br><br>
+    <div class="select-box">
+    <div>
+        <label>From</label>
+        <select id="from">
+            <option value="USD">USD</option>
+            <option value="INR">INR</option>
+            <option value="EURO">EURO</option>
+        </select>
+    </div>
+
+    <div>
+        <label>To</label>
+        <select id="to">
+            <option value="USD">USD</option>
+            <option value="INR">INR</option>
+            <option value="EURO">EURO</option>
+        </select>
+    </div>
+</div>
+    <br><br>
+    <button onclick="convertCurrency()">Convert</button>
+    <h3 id="result"></h3>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
